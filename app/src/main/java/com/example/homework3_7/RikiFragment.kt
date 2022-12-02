@@ -1,6 +1,7 @@
 package com.example.homework3_7
 
 import android.os.Bundle
+import android.text.Layout.Directions
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,6 +27,7 @@ class RikiFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
+        RiciLIst.clear()
         loadData()
 
          adapterMusic = RickAdapter(RiciLIst,this::onClick)
@@ -41,7 +43,7 @@ class RikiFragment : Fragment() {
     private fun onClick(position:Int){
         val bundle = Bundle()
         bundle.putSerializable("key",RiciLIst[position])
-        findNavController().navigate(R.id.blankFragment,bundle)
+        findNavController().navigate(RikiFragmentDirections.actionRikiFragmentToBlankFragment(RiciLIst[position]))
     }
 
 

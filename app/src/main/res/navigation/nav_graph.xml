@@ -6,15 +6,6 @@
     app:startDestination="@id/rikiFragment">
 
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.example.homework3_7.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
-        <action
-            android:id="@+id/action_blankFragment_to_placeholder"
-            app:destination="@id/placeholder" />
-    </fragment>
-    <fragment
         android:id="@+id/rikiFragment"
         android:name="com.example.homework3_7.RikiFragment"
         android:label="fragment_riki"
@@ -23,5 +14,17 @@
             android:id="@+id/action_rikiFragment_to_blankFragment"
             app:destination="@id/blankFragment" />
     </fragment>
-    <fragment android:id="@+id/placeholder" />
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.homework3_7.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <argument
+            android:name="model"
+            app:argType="java.io.Serializable"
+            />
+
+    </fragment>
+
 </navigation>
